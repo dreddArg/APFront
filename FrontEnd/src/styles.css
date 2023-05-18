@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+/* Navbar */
+.navbar {
+    padding: 1rem;
+    background-color: aqua;
+}
+
+.navbar-collapse {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-iconos {
+    font-size: 2rem;
+}
+
+.navbar-titulo {
+    font-size: 1.3rem;
+}
+/* Estilo general */
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.seccion-oscura {
+    padding: 20px;
+    background-color: #252525;
+    color:#f5f6f7
+}
+
+.seccion-clara {
+    padding: 20px;
+    background-color: #f5f6f7;
+    color:#252525
+}
+
+/* Seccion Hero */
+
+.disenio {
+    border: 2px solid blue;
+}
+
+.perfil {
+    background-color: #f5f6f7;
+    min-height: 150px;
+    text-align: center;
+    padding: 20px;
+}
+
+.perfil h1 {
+    font-size: 2rem;
+}
+
+.perfil h2 {
+    font-size: 1.5rem;
+}
+
+.perfil p {
+    font-size: 1.1rem;
+    padding: 10px 0;
+}
+
+.perfil img {
+    border: black solid 2px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+/* Experiencia */
+
+.experiencia h3 {
+    font-size: 1.1rem;
+}
+
+/* Estudios */
+
+.estudios h3 {
+    font-size: 1.1rem;
+}
+
+/* Adaptable Responsivo */
+@media screen and (max-width: 768px) {
+    .navbar-brand {
+        display: none;
+    }
+}
