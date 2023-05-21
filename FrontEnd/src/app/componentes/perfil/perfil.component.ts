@@ -7,14 +7,13 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent {
-  miPortfolio:any;
+  miPerfil:any;
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor(private datosPerfil:PortfolioService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data =>{
-      // console.log(data);
-      this.miPortfolio = data;
+    this.datosPerfil.obtenerDatosPerfil().subscribe(dataPerfil =>{  
+      this.miPerfil = dataPerfil;
     });
   }
 }

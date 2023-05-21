@@ -25,6 +25,10 @@
         "class": "bi bi-envelope-at navbar-iconos"
       }
     ],
+    "fotoPerfilUrl": "/assets/img/sergio.jpg",
+    "nombre": "Sergio Durelli",
+    "bio": "Curioso Informático",
+    "longBio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt auctor risus, in dignissim nunc blandit ut. Cras placerat orci vitae orci ullamcorper, at elementum enim suscipit. Sed sodales sit amet sapien in luctus. Suspendisse potenti.",
     "experienciaTitulo": "Experiencia Laboral",
     "experiencia": [
       {
