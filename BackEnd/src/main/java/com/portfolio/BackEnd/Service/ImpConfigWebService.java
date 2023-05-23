@@ -11,16 +11,16 @@ import org.springframework.stereotype.Service;
 public class ImpConfigWebService implements IConfigWebService {
     
     @Autowired
-    public IConfigWebRepository iconfigWebRepository;
+    public IConfigWebRepository iConfigWebRepository;
 
     @Override
     public List<ConfigWeb> getConfigWeb() {
-        return iconfigWebRepository.findAll();
+        return iConfigWebRepository.findAll();
     }
 
     @Override
     public void saveConfigWeb(ConfigWeb configweb) {
-        iconfigWebRepository.save(configweb);
+        iConfigWebRepository.save(configweb);
     }
     
     
