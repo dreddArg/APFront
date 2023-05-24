@@ -21,7 +21,7 @@ public class PersonaController {
     @Autowired IPersonaService ipersonaServ;
     
     @GetMapping("api/personas/{id}")
-    public Persona datosPersona(@PathVariable Long id){
+    public Persona datosPersona(@PathVariable Integer id){
        // persona = ;
         return ipersonaServ.findPersona(id);
     }
@@ -38,13 +38,13 @@ public class PersonaController {
     }
     
     @DeleteMapping("personas/borrar/{id}")
-    public String deletePersona(@PathVariable Long id){
+    public String deletePersona(@PathVariable Integer id){
         ipersonaServ.deletePersona(id);
         return "Persona borrada.";
     }
     
     @PutMapping("personas/editar/{id}")
-    public String editPersona(@PathVariable Long id,
+    public String editPersona(@PathVariable Integer id,
                               @RequestParam("nombre") String newnombre,
                               @RequestParam("bio") String newbio,
                               @RequestParam("longbio") String newlongbio,

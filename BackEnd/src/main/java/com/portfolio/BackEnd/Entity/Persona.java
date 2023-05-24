@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     
     @NotNull
     private String nombre;
@@ -23,11 +23,23 @@ public class Persona {
     
     private String fotoPerfilUrl;
 
-    public Long getId() {
+    //Constructors
+    public Persona() {
+    }
+
+    public Persona(String nombre, String bio, String longBio, String fotoPerfilUrl) {
+        this.nombre = nombre;
+        this.bio = bio;
+        this.longBio = longBio;
+        this.fotoPerfilUrl = fotoPerfilUrl;
+    }
+
+    //Getters Setters
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

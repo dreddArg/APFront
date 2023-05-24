@@ -10,16 +10,25 @@ import javax.validation.constraints.NotNull;
 public class ConfigWeb {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     
     @NotNull
     private Long personaActiva_id;
 
-    public Long getId() {
+    //Contructor
+    public ConfigWeb() {
+    }
+
+    public ConfigWeb(Long personaActiva_id) {
+        this.personaActiva_id = personaActiva_id;
+    }
+
+    //Getters Setters
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
