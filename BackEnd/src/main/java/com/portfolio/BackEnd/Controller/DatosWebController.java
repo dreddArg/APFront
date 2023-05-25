@@ -1,7 +1,7 @@
 package com.portfolio.BackEnd.Controller;
 
-import com.portfolio.BackEnd.Entity.ConfigWeb;
-import com.portfolio.BackEnd.Interface.IConfigWebService;
+import com.portfolio.BackEnd.Entity.DatosWeb;
+import com.portfolio.BackEnd.Interface.IDatosWebService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,19 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = "http://localhost:4200")
 
-
 @RestController
-public class ConfigWebController {
-    @Autowired IConfigWebService iconfigWebServ;
+public class DatosWebController {
+    @Autowired IDatosWebService iDatosWebService;
     
-    @GetMapping("api/configweb")
-    public List<ConfigWeb> getConfigWeb(){
-       // persona = ;
-        return iconfigWebServ.getConfigWeb();
+    @GetMapping("api/getdatosweb")
+    private List<DatosWeb> getDatosWeb(){
+        return iDatosWebService.getDatosWeb();
     }
     
-    @PostMapping("api/configweb/graba")
-    public void saveConfigWeb(@RequestBody ConfigWeb configweb){
-        iconfigWebServ.saveConfigWeb(configweb);
+    @PostMapping("api/savedatosweb")
+    private void saveDatosWeb(@RequestBody DatosWeb datosWeb){
+        iDatosWebService.saveDatosWeb(datosWeb);
     }
 }
