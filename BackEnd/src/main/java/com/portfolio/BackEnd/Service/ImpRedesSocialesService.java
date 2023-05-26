@@ -4,10 +4,12 @@ import com.portfolio.BackEnd.Entity.RedesSociales;
 import com.portfolio.BackEnd.Interface.IRedesSocialesService;
 import com.portfolio.BackEnd.Repository.IRedesSocialesRepository;
 import java.util.List;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Transactional
 public class ImpRedesSocialesService implements IRedesSocialesService {
     
     @Autowired
