@@ -8,8 +8,18 @@ import { Observable } from 'rxjs';
 export class PortfolioService {
 
   url:string = 'http://localhost:8080/api/';
+  getDatosWeb:string = 'getdatosweb/';
+  getRedesSociales:string = 'getredessociales/';
 
   constructor(private http:HttpClient) { }
+
+  obtenerDatosWeb():Observable<any> {
+    return this.http.get(this.url+this.getDatosWeb);
+  }
+
+  obtenerRedesSociales():Observable<any> {
+    return this.http.get(this.url+this.getRedesSociales);
+  }
 
   obtenerDatos():Observable<any> { 
     return this.http.get('/assets/data/data.json');

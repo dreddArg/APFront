@@ -6,13 +6,13 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarToggler">
-              <a class="navbar-brand" [href]="miPortfolio.hrefPrincipal" target="_blank" rel="noopener noreferrer"><!-- Property Binding -->
-              <img [src]="miPortfolio.logoPrincipalUrl" width="200" alt="Logo Argentina Programa"></a>
-              <p class="navbar-titulo">{{miPortfolio.titulo}}</p>                                                  <!-- Binding interpolacion -->
+              <a class="navbar-brand" [href]="datosWeb.hrefPrincipal" target="_blank" rel="noopener noreferrer"><!-- Property Binding -->
+              <img [src]="datosWeb.logoPrincipalUrl" width="200" alt="Logo Argentina Programa"></a>
+              <p class="navbar-titulo">{{datosWeb.titulo}}</p>                                                  <!-- Binding interpolacion -->
               <ul class="navbar-nav d-flex justify-content-center align-items-center">
                 <li class="nav-item" *ngFor="let redes of redesSociales">                                          <!-- Directivas -->
                   <a class="nav-link" [href]="redes.href" target="_blank" rel="noopener noreferrer">
-                  <i [class]="redes.class"></i></a>
+                  <i [class]="redes.classs"></i></a>
                 </li>
                 <li class="nav-item">
                   <a class="btn btn-primary" href="/login" role="button">Ingresar</a>
@@ -22,6 +22,6 @@
           </div>
         </nav>
       <div class="row">
-        <img [src]="miPortfolio.imagenPrincipalUrl" alt="Imagen de fondo" class="img-fluid">
+        <img [src]="datosWeb.imagenPrincipalUrl" alt="Imagen de fondo" class="img-fluid">
       </div>
     </header>
