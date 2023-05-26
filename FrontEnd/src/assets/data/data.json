@@ -1,47 +1,4 @@
 {
-    "titulo": "Argentina Programa #YoProgramo4",
-    "logoPrincipalUrl": "/assets/img/aplogo.png",
-    "hrefPrincipal": "https://argentinaprograma.inti.gob.ar",
-    "imagenPrincipalUrl": "/assets/img/fondo.png",
-    "redesSociales": [
-      {
-        "href": "#",
-        "class": "bi bi-whatsapp navbar-iconos"
-      },
-      {
-        "href": "https://www.facebook.com/durelli.sergio",
-        "class": "bi bi-facebook navbar-iconos"
-      },
-      {
-        "href": "https://twitter.com/SDurelli86",
-        "class": "bi bi-twitter navbar-iconos"
-      },
-      {
-        "href": "https://instagram.com/",
-        "class": "bi bi-instagram navbar-iconos"
-      },
-      {
-        "href": "mailto:sergiodurelli@hotmail.com",
-        "class": "bi bi-envelope-at navbar-iconos"
-      }
-    ],
-    "experienciaTitulo": "Experiencia Laboral",
-    "experiencia": [
-      {
-        "logo": "222",
-        "nombreEmpresa": "Empresa 123",
-        "fechaInicial": "2023",
-        "fechaFinal": "2023",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      },
-      {
-        "logo": "333",
-        "nombreEmpresa": "Empresa 456",
-        "fechaInicial": "2023",
-        "fechaFinal": "2023",
-        "descripcion": "Aliquam tincidunt auctor risus, in dignissim nunc blandit ut."
-      }
-    ],
     "educacionTitulo": "Educacion y Conocimientos",
     "educacion": [
       {

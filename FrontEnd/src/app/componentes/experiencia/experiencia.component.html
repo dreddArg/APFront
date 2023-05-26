@@ -1,12 +1,22 @@
     <!-- Seccion experiencia -->
     <section class="experiencia seccion-oscura">
         <div class="container text-center">
-          <div class="row">
-            <h2>{{miPortfolio.experienciaTitulo}}</h2>
+          <div class="row align-items-center">
+            <h2>{{datosWeb.experienciaTitulo}}</h2>
           </div>
-          <div class="row" *ngFor="let exp of experiencia">
-            <div class="col-12 col-md-4">
-              <img [alt]="exp.nombreEmpresa" [src]="exp.logo">{{exp.nombreEmpresa}}
+          <div class="row align-items-center" *ngFor="let exp of experiencia">
+            <div class="col-12 col-md-4 text-center">
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-4">
+                  <img [alt]="exp.nombreEmpresa" [src]="exp.logo">
+                </div>
+                <div class="col-12 col-md-4">
+                  {{exp.nombreEmpresa}}
+                </div>
+              </div>
+              <div class="div">
+                <p><span class="badge rounded-pill text-bg-light">{{exp.fechaInicial}}</span> - <span class="badge rounded-pill text-bg-light">{{exp.fechaFinal}}</span></p>
+              </div>
             </div>
             <div class="col-12 col-md-8">
               <h3>{{exp.descripcion}}</h3>

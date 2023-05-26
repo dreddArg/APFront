@@ -10,6 +10,7 @@ export class PortfolioService {
   url:string = 'http://localhost:8080/api/';
   getDatosWeb:string = 'getdatosweb/';
   getRedesSociales:string = 'getredessociales/';
+  getExperiencia:string = 'getexperiencia/';
 
   constructor(private http:HttpClient) { }
 
@@ -19,6 +20,10 @@ export class PortfolioService {
 
   obtenerRedesSociales():Observable<any> {
     return this.http.get(this.url+this.getRedesSociales);
+  }
+
+  obtenerExperiencia():Observable<any> {
+    return this.http.get(this.url+this.getExperiencia);
   }
 
   obtenerDatos():Observable<any> { 
