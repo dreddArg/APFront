@@ -25,4 +25,8 @@ public class ImpRedesSocialesService implements IRedesSocialesService {
         iRedesSocialesRepository.save(redesSociales);
     }
     
+    @Override
+    public void deleteRedesSociales(int id){
+        iRedesSocialesRepository.deleteById(id);
+    }
 }

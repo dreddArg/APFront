@@ -27,5 +27,4 @@ public class RedesSocialesController {
         iRedesSocialesService.saveRedesSociales(redesSociales);
     }
     
-    
 }

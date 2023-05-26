@@ -9,4 +9,6 @@ public interface IRedesSocialesService {
     
     public void saveRedesSociales(RedesSociales redesSociales);
     
+    public void deleteRedesSociales(int id);
+    
 }
