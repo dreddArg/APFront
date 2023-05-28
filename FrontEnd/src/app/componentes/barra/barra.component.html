@@ -15,7 +15,9 @@
                   <i [class]="redes.classs"></i></a>
                 </li>
                 <li class="nav-item">
-                  <a class="btn btn-primary" href="/login" role="button">Ingresar</a>
+                  <!-- <a class="btn btn-primary" href="/login" role="button">Ingresar</a> -->
+                  <button type="button" class="btn btn-primary" (click)="login()" *ngIf="!isLogged">Ingresar</button>
+                  <button type="button" class="btn btn-secondary" (click)="onLogOut()" *ngIf="isLogged">Cerrar Sesion</button>
                 </li>
               </ul>
             </div>
