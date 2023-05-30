@@ -8,22 +8,24 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = "http://localhost:4200")
 
 @RestController
+@RequestMapping("/api")
 
 public class ExperienciaController {
     
     @Autowired IExperienciaService iExperienciaService;
     
-    @GetMapping("api/getexperiencia")
+    @GetMapping("/getexperiencia")
     public List<Experiencia> getExperiencia(){
         return iExperienciaService.getExperiencia();
     } 
 
-    @PostMapping("api/saveexperiencia")
+    @PostMapping("/saveexperiencia")
     public void saveExperiencia(@RequestBody Experiencia experiencia){
         iExperienciaService.saveExperiencia(experiencia);
     }

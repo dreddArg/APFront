@@ -16,8 +16,8 @@ public class ImpDatosWebService implements IDatosWebService {
     public IDatosWebRepository iDatosWebRepository;
 
     @Override
-    public List<DatosWeb> getDatosWeb() {
-        return iDatosWebRepository.findAll();
+    public DatosWeb getDatosWeb(Integer id) {
+        return iDatosWebRepository.findById(id).orElse(null);
     }
 
     @Override

@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface IDatosWebService {
     
-    public List<DatosWeb> getDatosWeb ();
+    public DatosWeb getDatosWeb(Integer id);
     
     public void saveDatosWeb(DatosWeb datosWeb);
 }
