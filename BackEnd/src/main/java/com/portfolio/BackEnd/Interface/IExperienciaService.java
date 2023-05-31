@@ -16,4 +16,8 @@ public interface IExperienciaService {
     
     public void deleteExperiencia(int id);
     
+    public boolean existsById(int id);
+    
+    public boolean existsByNombreEmpresa(String nombreEmpresa);
+    
 }
