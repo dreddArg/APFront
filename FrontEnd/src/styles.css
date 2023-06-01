@@ -47,7 +47,7 @@ section {
     background-color: #f5f6f7;
     min-height: 150px;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
 }
 
 .perfil h1 {
@@ -70,11 +70,16 @@ section {
     height: 100px;
 }
 /* Experiencia */
-
+.experiencia {
+    padding: 10px;
+}
 .experiencia h3 {
     font-size: 1.1rem;
 }
 
+.exprow {
+    padding: 15px;
+}
 /* Estudios */
 
 .estudios h3 {
@@ -94,7 +99,7 @@ section {
     }
 }
 
-/* Login webpages */
+/* Login webpages y Alta datos experiencia*/
 .gradient-custom {
     /* fallback for old browsers */
     background: aqua;

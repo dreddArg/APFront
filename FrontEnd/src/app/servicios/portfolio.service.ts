@@ -1,38 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Persona } from '../model/persona';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PortfolioService {
 
-  url:string = 'http://localhost:8080/api/';
-  getDatosWeb:string = 'getdatosweb/';
-  getRedesSociales:string = 'getredessociales/';
-  getExperiencia:string = 'getexperiencia/';
-
+  url:string = 'http://localhost:8080/api/personas/get/';
+  
   constructor(private http:HttpClient) { }
 
-  obtenerDatosWeb():Observable<any> {
-    return this.http.get(this.url+this.getDatosWeb);
-  }
-
-  obtenerRedesSociales():Observable<any> {
-    return this.http.get(this.url+this.getRedesSociales);
-  }
-
-  obtenerExperiencia():Observable<any> {
-    return this.http.get(this.url+this.getExperiencia);
-  }
-
+  // *a remover* obtener datos de JSON
   obtenerDatos():Observable<any> { 
     return this.http.get('/assets/data/data.json');
-    //return this.http.get(this.url+"personas/1");
   }
 
-  obtenerDatosPerfil():Observable<any> { 
+  obtenerPerfil():Observable<Persona> { 
     //return this.http.get('/assets/data/data.json');
-    return this.http.get(this.url+"personas/1");
+    return this.http.get<Persona>(this.url+"1");
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 @Component({
@@ -6,13 +6,13 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.css']
 })
-export class PerfilComponent {
+export class PerfilComponent implements OnInit {
   miPerfil:any;
 
   constructor(private datosPerfil:PortfolioService) { }
 
   ngOnInit(): void {
-    this.datosPerfil.obtenerDatosPerfil().subscribe(dataPerfil =>{  
+    this.datosPerfil.obtenerPerfil().subscribe(dataPerfil =>{  
       this.miPerfil = dataPerfil;
     });
   }
