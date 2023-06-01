@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { DatosWeb } from 'src/app/model/datos-web';
+import { DatosWebService } from 'src/app/servicios/datos-web.service';
+import { RedesSocialesService } from 'src/app/servicios/redes-sociales.service';
 import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
@@ -8,22 +10,21 @@ import { TokenService } from 'src/app/servicios/token.service';
   templateUrl: './barra.component.html',
   styleUrls: ['./barra.component.css']
 })
-export class BarraComponent implements OnInit {
+export class BarraComponent {
   isLogged = false;
-  datosWeb:any;
+
+  datosWeb: DatosWeb = new DatosWeb("", "", "", "", "", "", "", "","","", 0);
   redesSociales:any;
 
-  constructor(private datosPortfolio:PortfolioService, private router:Router, private tokenService: TokenService) { }
+  constructor(private datosWebService: DatosWebService, private redesSocialesService: RedesSocialesService, private router:Router, private tokenService: TokenService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatosWeb().subscribe(data =>{
-      //console.log(data);
-      this.datosWeb = data[0];
-      //this.redesSociales = data.redesSociales;
-      // console.log(this.redesSociales)
+    this.datosWebService.obtenerDatosWeb().subscribe(data =>{
+      //console.log("BARRA Datos Web: " + data);
+      this.datosWeb = data;
     });
 
-    this.datosPortfolio.obtenerRedesSociales().subscribe(data => {
+    this.redesSocialesService.obtenerRedesSociales().subscribe(data => {
       this.redesSociales = data;
       //console.log(data);
     })
