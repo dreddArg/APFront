@@ -15,17 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "http://localhost:4200")
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/datosweb")
 
 public class DatosWebController {
     @Autowired IDatosWebService iDatosWebService;
     
-    @GetMapping("/getdatosweb/{id}")
+    @GetMapping("/get/{id}")
     private DatosWeb getDatosWeb(@PathVariable Integer id){
         return iDatosWebService.getDatosWeb(id);
     }
     
-    @PostMapping("/savedatosweb")
+    @PostMapping("/save")
     private void saveDatosWeb(@RequestBody DatosWeb datosWeb){
         iDatosWebService.saveDatosWeb(datosWeb);
     }

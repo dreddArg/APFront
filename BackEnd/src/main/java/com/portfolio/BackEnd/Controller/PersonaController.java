@@ -12,42 +12,45 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = "http://localhost:4200")
 
 @RestController
+@RequestMapping("/api/personas")
+
 public class PersonaController {
     @Autowired IPersonaService ipersonaServ;
     
-    @GetMapping("api/personas/{id}")
+    @GetMapping("/get/{id}")
     public Persona datosPersona(@PathVariable Integer id){
        // persona = ;
         return ipersonaServ.findPersona(id);
     }
     
-    @GetMapping("personas/lista")
+    @GetMapping("/lista")
     public List<Persona> getPersona(){
         return ipersonaServ.getPersona();
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("personas/crear")
+    @PostMapping("/crear")
     public String savePersona(@RequestBody Persona persona){
         ipersonaServ.savePersona(persona);
         return "Persona creada.";
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("personas/borrar/{id}")
+    @DeleteMapping("/borrar/{id}")
     public String deletePersona(@PathVariable Integer id){
         ipersonaServ.deletePersona(id);
         return "Persona borrada.";
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("personas/editar/{id}")
+    @PutMapping("/editar/{id}")
     public String editPersona(@PathVariable Integer id,
                               @RequestParam("nombre") String newnombre,
                               @RequestParam("bio") String newbio,

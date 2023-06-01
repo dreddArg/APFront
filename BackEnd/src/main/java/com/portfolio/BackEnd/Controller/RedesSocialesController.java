@@ -14,18 +14,18 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "http://localhost:4200")
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/redessociales")
 
 public class RedesSocialesController {
     
     @Autowired IRedesSocialesService iRedesSocialesService;
     
-    @GetMapping("/getredessociales")
+    @GetMapping("/get")
     public List<RedesSociales> getRedesSociales(){
         return iRedesSocialesService.getRedesSociales();
     }
     
-    @PostMapping("/saveredessociales")
+    @PostMapping("/save")
     public void saveRedesSociales(@RequestBody RedesSociales redesSociales){
         iRedesSocialesService.saveRedesSociales(redesSociales);
     }
