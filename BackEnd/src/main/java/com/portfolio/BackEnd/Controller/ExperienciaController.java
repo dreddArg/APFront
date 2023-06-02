@@ -43,13 +43,13 @@ public class ExperienciaController {
     public ResponseEntity<?> saveExperiencia(@RequestBody DtoExperiencia dtoexp){
         
         // validamos que el nombre de empresa no esté en blanco
-        if (StringUtils.isBlank(dtoexp.getNombreEmpresa()))
+        if (StringUtils.isBlank(dtoexp.getNombreEmpresa())){
             return new ResponseEntity(new Mensaje("El Nombre de Empresa es obligatorio."), HttpStatus.BAD_REQUEST);
-        
+        }
         // validamos que no exista el mismo nombre de empresa
-        if (iExperienciaService.existsByNombreEmpresa(dtoexp.getNombreEmpresa()))
+        if (iExperienciaService.existsByNombreEmpresa(dtoexp.getNombreEmpresa())){
             return new ResponseEntity(new Mensaje("Esa experiencia ya existe."), HttpStatus.BAD_REQUEST);
-        
+        }
         // pasamos datos del DTO a nuevo Objeto para grabarlo, respetar orden datos segun DTO
         Experiencia experienciaNueva = new Experiencia(dtoexp.getLogo(),
                                                      dtoexp.getNombreEmpresa(),
@@ -69,18 +69,18 @@ public class ExperienciaController {
     @PutMapping("/update/{id}")
     public ResponseEntity<?> updateExperiencia(@PathVariable("id") int id, @RequestBody DtoExperiencia dtoexp){
         // Validamos si existe el Id pasado
-        if (!iExperienciaService.existsById(id))
+        if (!iExperienciaService.existsById(id)){
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
-
+        }
         // Vemos si la experiencia ya existe en otro Id
         if (iExperienciaService.existsByNombreEmpresa(dtoexp.getNombreEmpresa()) && 
-                iExperienciaService.getByNombreEmpresa(dtoexp.getNombreEmpresa()).get().getId() != id)
+                iExperienciaService.getByNombreEmpresa(dtoexp.getNombreEmpresa()).get().getId() != id){
             return new ResponseEntity(new Mensaje("Esa experiencia existe en otro registro"), HttpStatus.BAD_REQUEST);
-        
+        }
         // check si está en blanco el nombre
-        if (StringUtils.isBlank(dtoexp.getNombreEmpresa()))
+        if (StringUtils.isBlank(dtoexp.getNombreEmpresa())){
             return new ResponseEntity(new Mensaje("El Nombre no puede estar vacío"), HttpStatus.BAD_REQUEST);
-        
+        }
         // armamos objeto con la informacion actual antes de actualizar
         Experiencia experienciaActualizada = iExperienciaService.getOneExperiencia(id).get();
         // asignamos datos del DTO al objeto a actualizar
@@ -97,9 +97,9 @@ public class ExperienciaController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteExperiencia(@PathVariable("id") int id){
         // Validamos si existe el Id pasado
-        if (!iExperienciaService.existsById(id))
+        if (!iExperienciaService.existsById(id)){
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
-        
+        }
         iExperienciaService.deleteExperiencia(id);
         
         return new ResponseEntity(new Mensaje("Experiencia borrada"), HttpStatus.OK);
@@ -108,8 +108,9 @@ public class ExperienciaController {
     @GetMapping("/detail/{id}")
     public ResponseEntity<Experiencia> getById(@PathVariable("id") int id){
         // Validamos si existe el Id pasado
-        if (!iExperienciaService.existsById(id))
+        if (!iExperienciaService.existsById(id)){
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.NOT_FOUND);
+        }
         Experiencia expDetail = iExperienciaService.getOneExperiencia(id).get();
         return new ResponseEntity(expDetail, HttpStatus.OK);
         }
