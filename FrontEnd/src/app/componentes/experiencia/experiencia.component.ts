@@ -25,7 +25,7 @@ export class ExperienciaComponent implements OnInit {
     this.cargarExperiencia();
 
     //cargamos datosWeb
-    this.datosWebService.obtenerDatosWeb().subscribe(data =>{this.datosWeb = data});
+    this.cargarDatosWeb();
 
     // validamos si estamos logueados o no
     if (this.tokenService.getToken()){
@@ -34,6 +34,14 @@ export class ExperienciaComponent implements OnInit {
       this.isLogged = false;
     }
 
+  }
+
+  cargarDatosWeb(): void {
+    this.datosWebService.obtenerDatosWeb().subscribe(
+      data => {
+        this.datosWeb = data;
+      }
+    )
   }
 
   cargarExperiencia(): void {
