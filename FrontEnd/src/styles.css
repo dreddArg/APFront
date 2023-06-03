@@ -86,6 +86,10 @@ section {
     font-size: 1.1rem;
 }
 
+.edurow {
+    padding: 15px;
+}
+
 /* Footer */
 
 .footer {
