@@ -18,6 +18,8 @@ import { NewExperienciaComponent } from './componentes/experiencia/new-experienc
 import { EditExperienciaComponent } from './componentes/experiencia/edit-experiencia.component';
 import { NewEducacionComponent } from './componentes/educacion/new-educacion.component';
 import { EditEducacionComponent } from './componentes/educacion/edit-educacion.component';
+import { NewHabilidadesComponent } from './componentes/habilidades/new-habilidades.component';
+import { EditHabilidadesComponent } from './componentes/habilidades/edit-habilidades.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { EditEducacionComponent } from './componentes/educacion/edit-educacion.c
     EditExperienciaComponent,
     NewEducacionComponent,
     EditEducacionComponent,
+    NewHabilidadesComponent,
+    EditHabilidadesComponent,
   ],
   imports: [
     BrowserModule,
