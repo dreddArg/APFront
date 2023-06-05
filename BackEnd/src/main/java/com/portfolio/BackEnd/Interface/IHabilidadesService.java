@@ -6,17 +6,17 @@ import java.util.Optional;
 
 public interface IHabilidadesService {
     
-    public List<Habilidades> getHabilidades();
+    public List<Habilidades> getHab();
     
-    public Optional<Habilidades> getOneHabilidades(int id);
+    public Optional<Habilidades> getOneHab(int id);
     
-    public Optional<Habilidades> getByNombreHabilidades(String nombreHabilidades);
+    public Optional<Habilidades> getByNombreHab(String nombreHab);
     
-    public void saveHabilidades(Habilidades hab);
+    public void saveHab(Habilidades hab);
     
-    public void deleteHabilidades(int id);
+    public void deleteHab(int id);
     
     public boolean existsById(int id);
     
-    public boolean existsByNombreHabilidades(String nombreHabilidades);
+    public boolean existsByNombreHab(String nombreHab);
 }

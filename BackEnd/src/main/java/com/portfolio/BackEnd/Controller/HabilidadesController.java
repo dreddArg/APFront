@@ -29,26 +29,26 @@ public class HabilidadesController {
     @Autowired IHabilidadesService iHabilidadesService;
     
     @GetMapping("/get")
-    public ResponseEntity<List<Habilidades>> getHabilidades(){
-        List<Habilidades> list = iHabilidadesService.getHabilidades();
+    public ResponseEntity<List<Habilidades>> getHab(){
+        List<Habilidades> list = iHabilidadesService.getHab();
         return new ResponseEntity(list, HttpStatus.OK);
     }
     
     @PostMapping("/save")
-    public ResponseEntity<?> saveHabilidades(@RequestBody DtoHabilidades dtohab){
+    public ResponseEntity<?> saveHab(@RequestBody DtoHabilidades dtohab){
         
         //vemos q el nombre no este en blanco
-        if (StringUtils.isBlank(dtohab.getNombreHabilidad())){
+        if (StringUtils.isBlank(dtohab.getNombreHab())){
             return new ResponseEntity(new Mensaje("El nombre de la habilidad no puede estar vacía"), HttpStatus.BAD_REQUEST);
         }
         //vemos q no se repita el nombre de institucion
-        if (iHabilidadesService.existsByNombreHabilidades(dtohab.getNombreHabilidad())){
+        if (iHabilidadesService.existsByNombreHab(dtohab.getNombreHab())){
             return new ResponseEntity(new Mensaje("Ese nombre de habilidad ya existe"), HttpStatus.BAD_REQUEST);
         }
         // si no hubo errores grabamos datos del DTO a nuevo Objeto para grabarlo
-        Habilidades habilidadNueva = new Habilidades(dtohab.getNombreHabilidad(),
+        Habilidades habilidadNueva = new Habilidades(dtohab.getNombreHab(),
                                                 dtohab.getPorcentaje());
-        iHabilidadesService.saveHabilidades(habilidadNueva);
+        iHabilidadesService.saveHab(habilidadNueva);
         
         return new ResponseEntity(new Mensaje("Habilidad Registrada Correctamente"), HttpStatus.OK);
     }
@@ -60,21 +60,21 @@ public class HabilidadesController {
             return new ResponseEntity(new Mensaje("El id no existe"), HttpStatus.BAD_REQUEST);
         }
         // check si la habilidad se repite en otro ID
-        if (iHabilidadesService.existsByNombreHabilidades(dtoHab.getNombreHabilidad()) &&
-                iHabilidadesService.getByNombreHabilidades(dtoHab.getNombreHabilidad()).get().getId() != id){
+        if (iHabilidadesService.existsByNombreHab(dtoHab.getNombreHab()) &&
+                iHabilidadesService.getByNombreHab(dtoHab.getNombreHab()).get().getId() != id){
             return new ResponseEntity(new Mensaje("Esa habilidad existe en otro registro"), HttpStatus.OK);
         }
         // revisamos que no este en blanco el nombre
-        if (StringUtils.isBlank(dtoHab.getNombreHabilidad())){
+        if (StringUtils.isBlank(dtoHab.getNombreHab())){
             return new ResponseEntity(new Mensaje("El nombre de habilidad no puede estar vacío"), HttpStatus.BAD_REQUEST);
         }
         // armamos objeto nuevo con los actuales previo a actualizar
-        Habilidades habilidadActualizada = iHabilidadesService.getOneHabilidades(id).get();
+        Habilidades habilidadActualizada = iHabilidadesService.getOneHab(id).get();
         // asignamos datos del DTO al objeto a modificar
-        habilidadActualizada.setNombreHabilidad(dtoHab.getNombreHabilidad());
+        habilidadActualizada.setNombreHab(dtoHab.getNombreHab());
         habilidadActualizada.setPorcentaje(dtoHab.getPorcentaje());
         // grabamos obejto
-        iHabilidadesService.saveHabilidades(habilidadActualizada);
+        iHabilidadesService.saveHab(habilidadActualizada);
         return new ResponseEntity(new Mensaje("Habilidad Registrada"), HttpStatus.OK);
     }
 
@@ -84,7 +84,7 @@ public class HabilidadesController {
         if (!iHabilidadesService.existsById(id)){
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
         }
-        iHabilidadesService.deleteHabilidades(id);
+        iHabilidadesService.deleteHab(id);
         
         return new ResponseEntity(new Mensaje("Habilidad borrada"), HttpStatus.OK);
     }
@@ -95,7 +95,7 @@ public class HabilidadesController {
         if (!iHabilidadesService.existsById(id)){
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.NOT_FOUND);
         }
-        Habilidades habDetail = iHabilidadesService.getOneHabilidades(id).get();
+        Habilidades habDetail = iHabilidadesService.getOneHab(id).get();
         return new ResponseEntity(habDetail, HttpStatus.OK);
         }
 }

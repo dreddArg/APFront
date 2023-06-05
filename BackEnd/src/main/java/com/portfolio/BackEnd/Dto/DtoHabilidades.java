@@ -4,7 +4,7 @@ import javax.validation.constraints.NotBlank;
 
 public class DtoHabilidades {
     @NotBlank
-    private String nombreHabilidad;
+    private String nombreHab;
     @NotBlank
     private int porcentaje;
     
@@ -13,18 +13,18 @@ public class DtoHabilidades {
     public DtoHabilidades() {
     }
 
-    public DtoHabilidades(String nombreHabilidad, int porcentaje) {
-        this.nombreHabilidad = nombreHabilidad;
+    public DtoHabilidades(String nombreHab, int porcentaje) {
+        this.nombreHab = nombreHab;
         this.porcentaje = porcentaje;
     }
     //getters setters
 
-    public String getNombreHabilidad() {
-        return nombreHabilidad;
+    public String getNombreHab() {
+        return nombreHab;
     }
 
-    public void setNombreHabilidad(String nombreHabilidad) {
-        this.nombreHabilidad = nombreHabilidad;
+    public void setNombreHab(String nombreHab) {
+        this.nombreHab = nombreHab;
     }
 
     public int getPorcentaje() {

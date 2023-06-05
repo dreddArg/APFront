@@ -11,15 +11,15 @@ public class Habilidades {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nombreHabilidad;
+    private String nombreHab;
     private int porcentaje;
     
     //constructor
     public Habilidades() {
     }
 
-    public Habilidades(String nombreHabilidad, int porcentaje) {
-        this.nombreHabilidad = nombreHabilidad;
+    public Habilidades(String nombreHab, int porcentaje) {
+        this.nombreHab = nombreHab;
         this.porcentaje = porcentaje;
     }
     
@@ -32,12 +32,12 @@ public class Habilidades {
         this.id = id;
     }
 
-    public String getNombreHabilidad() {
-        return nombreHabilidad;
+    public String getNombreHab() {
+        return nombreHab;
     }
 
-    public void setNombreHabilidad(String nombreHabilidad) {
-        this.nombreHabilidad = nombreHabilidad;
+    public void setNombreHab(String nombreHab) {
+        this.nombreHab = nombreHab;
     }
 
     public int getPorcentaje() {

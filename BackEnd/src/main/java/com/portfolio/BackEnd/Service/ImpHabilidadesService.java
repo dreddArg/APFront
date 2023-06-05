@@ -17,27 +17,27 @@ public class ImpHabilidadesService implements IHabilidadesService {
     public IHabilidadesRepository iHabilidadesRepository;
     
     @Override
-    public List<Habilidades> getHabilidades() {
+    public List<Habilidades> getHab() {
         return iHabilidadesRepository.findAll();
     }
 
     @Override
-    public Optional<Habilidades> getOneHabilidades(int id) {
+    public Optional<Habilidades> getOneHab(int id) {
         return iHabilidadesRepository.findById(id);
     }
 
     @Override
-    public Optional<Habilidades> getByNombreHabilidades(String nombreHabilidades) {
-        return iHabilidadesRepository.findByNombreHabilidades(nombreHabilidades);
+    public Optional<Habilidades> getByNombreHab(String nombreHab) {
+        return iHabilidadesRepository.findByNombreHab(nombreHab);
     }
 
     @Override
-    public void saveHabilidades(Habilidades hab) {
+    public void saveHab(Habilidades hab) {
         iHabilidadesRepository.save(hab);
     }
 
     @Override
-    public void deleteHabilidades(int id) {
+    public void deleteHab(int id) {
         iHabilidadesRepository.deleteById(id);
     }
 
@@ -47,8 +47,8 @@ public class ImpHabilidadesService implements IHabilidadesService {
     }
 
     @Override
-    public boolean existsByNombreHabilidades(String nombreHabilidades) {
-        return iHabilidadesRepository.existsByNombreHabilidades(nombreHabilidades);
+    public boolean existsByNombreHab(String nombreHab) {
+        return iHabilidadesRepository.existsByNombreHab(nombreHab);
     }
     
 }

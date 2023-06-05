@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IHabilidadesRepository extends JpaRepository<Habilidades, Integer> {
     
-    public Optional<Habilidades> findByNombreHabilidades(String nombreHabilidades);
+    public Optional<Habilidades> findByNombreHab(String nombreHab);
     
-    public boolean existsByNombreHabilidades(String nombreHabilidades);
+    public boolean existsByNombreHab(String nombreHab);
 }
