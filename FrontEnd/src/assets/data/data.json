@@ -1,54 +1,17 @@
 {
-    "educacionTitulo": "Educacion y Conocimientos",
-    "educacion": [
-      {
-        "logo": "",
-        "nombreInstitucion": "Institucion 1",
-        "fechaInicial": "",
-        "fechaFinal": "",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt auctor risus, in dignissim nunc blandit ut."
-      },
-      {
-        "logo": "",
-        "nombreInstitucion": "Institucion 2",
-        "fechaInicial": "",
-        "fechaFinal": "",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt auctor risus, in dignissim nunc blandit ut."
-      }
-    ],
-    "habilidadesTitulo": "Habilidades e Intereses",
-    "habilidades": [
-      {
-        "nombre": "HTML, CSS, and JavaScript",
-        "style": "width: 15%",
-        "porcentaje": "15%"
-      },
-      {
-        "nombre": "Inglés",
-        "style": "width: 50%",
-        "porcentaje": "50%"
-      },
-      {
-        "nombre": "Networking",
-        "style": "width: 70%",
-        "porcentaje": "70%"
-      }
-    ],
     "proyectosTitulo": "Proyectos",
     "proyectos": [
       {
-        "logo": "",
+        "urlImg": "/assets/img/proyectoAP.jpg",
         "nombreProyecto": "Proyecto 1",
-        "fechaInicial": "",
-        "fechaFinal": "",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt auctor risus, in dignissim nunc blandit ut."
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt auctor risus, in dignissim nunc blandit ut.",
+        "link": "123"
       },
       {
-        "logo": "",
+        "urlImg": "/assets/img/proyectoAP.jpg",
         "nombreProyecto": "Proyecto 2",
-        "fechaInicial": "",
-        "fechaFinal": "",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt auctor risus, in dignissim nunc blandit ut."
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt auctor risus, in dignissim nunc blandit ut.",
+        "link": "456"
       }
     ]
   }

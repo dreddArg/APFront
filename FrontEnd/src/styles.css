@@ -16,6 +16,7 @@
 .navbar-titulo {
     font-size: 1.3rem;
 }
+
 /* Estilo general */
 
 section {
@@ -40,7 +41,7 @@ section {
 /* Seccion Hero */
 
 .disenio {
-    border: 2px solid blue;
+    border: 1px solid blue;
 }
 
 .perfil {
@@ -73,16 +74,34 @@ section {
 .experiencia {
     padding: 10px;
 }
-.experiencia h3 {
+
+.experiencia h1 {
+    font-size: 1.6rem;
+}
+
+.experiencia h2 {
+    font-size: 1.2rem;
+}
+
+.experiencia p {
     font-size: 1.1rem;
+    padding: 5px 0;
 }
 
 .exprow {
     padding: 15px;
 }
 /* Estudios */
-
-.estudios h3 {
+.estudios {
+    padding: 10px;
+}
+.estudios h1 {
+    font-size: 1.6rem;
+}
+.estudios h2 {
+    font-size: 1.2rem;
+}
+.estudios p {
     font-size: 1.1rem;
 }
 
@@ -90,8 +109,52 @@ section {
     padding: 15px;
 }
 
-/* Footer */
+/* Habilidades */
+.habilidades {
+    padding: 10px;
+}
 
+.habilidades h1 {
+    font-size: 1.6rem;
+}
+
+.habilidades h2 {
+    font-size: 1.2rem;
+}
+
+.habrow {
+    padding: 20px;
+}
+
+/* Proyectos */
+.proyectos {
+    padding: 10px;
+}
+
+.proyectos h1 {
+    font-size: 1.6rem;
+}
+
+.proyectos h2 {
+    font-size: 1.2rem;
+}
+
+.proyectos p {
+    font-size: 1.1rem;
+}
+
+.prorow {
+    padding: 20px;
+}
+
+.proyectos img {
+    border: black solid 2px;
+    border-radius: 4%;
+    width: 150px;
+    height: 150px;
+}
+
+/* Footer */
 .footer {
     font-size: 0.8rem;
 }
@@ -103,7 +166,7 @@ section {
     }
 }
 
-/* Login webpages y Alta datos experiencia*/
+/* Login webpages y Alta/edit datos gral */
 .gradient-custom {
     /* fallback for old browsers */
     background: aqua;

@@ -2,14 +2,14 @@
             <section class="habilidades seccion-oscura">
                 <div class="container text-center">
                   <div class="row">
-                    <h2>{{datosWeb.habilidadesTitulo}}</h2>
+                    <h1>{{datosWeb.habilidadesTitulo}}</h1>
                   </div>
                   <div class="col align-items-center">
                     <button type="button" class="btn btn-dark" routerLink="/nuevahab" *ngIf="isLogged"><i class="bi bi-plus-circle"></i></button>
                   </div>
                   <div class="row habrow align-items-center" *ngFor="let hab of habilidades">
                     <div class="col-12 col-md-4">
-                      <h3><span class="align-middle">{{hab.nombreHab}}</span></h3>
+                      <h2><span class="align-middle">{{hab.nombreHab}}</span></h2>
                     </div>
                     <div class="col-12 col-md-8" *ngIf="!isLogged"> <!-- si no esta logueado muestra datos en 8 columnas de Boostrap -->
                       <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
